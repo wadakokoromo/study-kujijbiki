@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="ja"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;🎓 勉強くじ&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: "Hiragino Maru Gothic ProN", sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, #a8edea, #fed6e3);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 12px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 320px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #ff7eb3;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #ff528c;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;🎓 勉強くじ&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;今日の運勢とおすすめ勉強時間をチェック！&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 id="fortune"&gt;今日の運勢は…？&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p id="result"&gt;ボタンを押してスタート！&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="drawFortune()"&gt;ひく！&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const fortunes = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>name: "大吉",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>msg: "集中力MAX！今のあなたなら何でもできる🔥",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>color: "#ffe066"</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>name: "中吉",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>msg: "やる気も気分も安定。コツコツ頑張れそう🌸",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>color: "#99ccff"</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>name: "小吉",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>msg: "無理せずゆるっと進もう☕",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>color: "#b0e0e6"</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>name: "吉",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>msg: "リラックスして、勉強もマイペースに📚",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>color: "#c3f0ca"</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>name: "凶",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>msg: "今日は息抜きも大事。リセット日かも🌙",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>color: "#f6b7b7"</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const times = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"15分だけでも集中しよう！",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"30分サクッとやって休憩☕",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"1時間しっかり集中タイム🔥",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"1時間半じっくり深堀り📖",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"2時間、最高の集中デー🌈"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const luckyItems = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"カラオケでリフレッシュ🎤",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"カフェモカ☕で気分UP",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"新しい文房具✏️",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"お気に入りの漫画📚",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"イヤホンで好きな音楽🎧",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"散歩しながらリセット🌿",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"コンビニスイーツ🍰",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"友達とのおしゃべり💬"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function drawFortune() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const time = times[Math.floor(Math.random() * times.length)];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const item = luckyItems[Math.floor(Math.random() * luckyItems.length)];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("fortune").textContent = fortune.name;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("result").innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;strong&gt;${fortune.msg}&lt;/strong&gt;&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>⏰ ${time}&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>🍀 ラッキーアイテム：${item}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.querySelector(".card").style.backgroundColor = fortune.color;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
