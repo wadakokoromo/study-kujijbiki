@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: "Hiragino Maru Gothic ProN", sans-serif;
-      background: linear-gradient(135deg, #ffeadb, #00bfff, #00fa9a);
+      background: linear-gradient(135deg, #bde0ff, #fff7ae);
       text-align: center;
       padding: 40px;
       margin: 0;
@@ -57,11 +57,11 @@
 
   <script>
     const fortunes = [
-      { name: "大吉", msg: "集中力MAX！今のあなたなら何でもできる", color: "#ff9999" },
-      { name: "中吉", msg: "やる気も気分も安定。コツコツ頑張れそう", color: "#99e699" },
+      { name: "大吉", msg: "集中力MAX！今のあなたなら何でもできる", color: "#ff6f6f" },
+      { name: "中吉", msg: "やる気も気分も安定。コツコツ頑張れそう", color: "#7cd67c" },
       { name: "小吉", msg: "自分のペースで進めよう", color: "#fff799" },
       { name: "吉", msg: "リラックスして勉強も自分のペースで", color: "#bce0ff" },
-      { name: "凶", msg: "今日は息抜きも大事。リセット日かも", color: "#e0e0e0" }
+      { name: "凶", msg: "今日は息抜きも大事。リセット日かも", color: "#d5d5d5" }
     ];
 
     const times = [
@@ -70,7 +70,8 @@
       "1時間しっかり集中タイム",
       "1時間半じっくり",
       "2時間頑張ろう！",
-      "脅威の3時間に挑戦"
+      "脅威の3時間に挑戦",
+      "5分でも、まずは取り掛かろう！"
     ];
 
     const luckyItems = [
@@ -95,8 +96,8 @@
       document.getElementById("fortune").textContent = fortune.name;
       document.getElementById("result").innerHTML = `
         <strong>${fortune.msg}</strong><br><br>
-        勉強時間： ${time}<br>
-        ラッキーポイント：${item}
+      🕰️勉強時間： ${time}<br>
+      ✌️ラッキーポイント：${item}
       `;
 
       document.querySelector(".card").style.backgroundColor = fortune.color;
