@@ -74,13 +74,16 @@
 
     const luckyItems = [
       "カラオケ",
-      "カフェモカ",
+      "カフェ",
       "新しい文房具",
       "お気に入りの漫画",
       "好きな音楽",
       "散歩",
       "スイーツ",
-      "バイト"
+      "映画",
+      "焼肉",
+      "ラーメン",
+      "赤色の服",
     ];
 
     function drawFortune() {
@@ -91,8 +94,8 @@
       document.getElementById("fortune").textContent = fortune.name;
       document.getElementById("result").innerHTML = `
         <strong>${fortune.msg}</strong><br><br>
-        ⏰ ${time}<br>
-        🍀 ラッキーアイテム：${item}
+        勉強時間： ${time}<br>
+        ラッキーポイント：${item}
       `;
 
       document.querySelector(".card").style.backgroundColor = fortune.color;
